@@ -8,4 +8,10 @@ router.post('/parks', controllers.createPark)
 
 router.get('/parks', controllers.getAllParks)
 
+router.get('/reviews', controllers.getAllReviews)
+
+router.get('/parks/:id', controllers.getParkById)
+
+// router.put('/parks/:id', controllers.updatePark)
+
 module.exports = router

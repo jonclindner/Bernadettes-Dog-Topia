@@ -1,11 +1,12 @@
 const express = require('express')
 const routes = require('./routes')
 const db = require('./db')
+const logger = require('morgan')
 
 // require() imports and middleware here ^ ///////
 
 const PORT = process.env.PORT || 3001
-
+app.use(logger('dev'))
 const app = express()
 
 app.use(express.json())

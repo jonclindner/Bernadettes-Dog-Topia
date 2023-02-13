@@ -1,14 +1,15 @@
 const db = require('../db')
+const Review = require('../models/review')
 const { Park, Review } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-  const barnum = await Publisher.find({ name: 'Barnum' })
-  const berkely = await Publisher.find({ name: 'Berkely' })
-  const fuller = await Publisher.find({ name: 'Fuller' })
+  const barnum = await Park.find({ name: 'Barnum' })
+  const berkely = await Park.find({ name: 'Berkely' })
+  const fuller = await Park.find({ name: 'Fuller' })
 
-  const books = [
+  const reviews = [
     {
       user: 'Test User One',
       rating: 4,
