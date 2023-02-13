@@ -12,6 +12,6 @@ router.get('/reviews', controllers.getAllReviews)
 
 router.get('/parks/:id', controllers.getParkById)
 
-// router.put('/parks/:id', controllers.updatePark)
+router.put('/parks/:id', controllers.updatePark)
 
 module.exports = router
