@@ -1,6 +1,6 @@
 const db = require('../db')
 const Review = require('../models/review')
-const { Park, Review } = require('../models')
+const Park = require('../models/park')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -32,6 +32,8 @@ const main = async () => {
 
   await Review.insertMany(reviews)
   console.log('Created reviews for parks')
+  console.log(barnum)
+  console.log(barnum[0]._id)
 }
 const run = async () => {
   await main()
