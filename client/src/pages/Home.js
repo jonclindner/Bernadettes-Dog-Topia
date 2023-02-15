@@ -11,7 +11,7 @@
 // }
 
 // export default Home
-import ParkCard from '../components/ParkCard'
+import ViewParks from './ViewParks'
 
 const Home = () => {
   //   const [parks, setParks] = useState([])
@@ -25,6 +25,14 @@ const Home = () => {
   return (
     <div>
       <h1>Home Page</h1>
+      <div>
+        <ViewParks />
+      </div>
+      {/* <img
+        style={{ display: 'block', maxWidth: '100%' }}
+        src="https://ih1.redbubble.net/image.1691462226.2536/st,small,507x507-pad,600x600,f8f8f8.jpg"
+        alt="logo"
+      /> */}
     </div>
   )
 }
