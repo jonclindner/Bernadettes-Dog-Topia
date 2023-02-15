@@ -12,7 +12,7 @@ const main = async () => {
       material: 'Gravel',
       description: 'Description Placeholder - Barnum',
       image:
-        'https://upload.wikimedia.org/wikipedia/commons/4/4b/Aloe_vera_flower_inset.png'
+        'https://lh3.googleusercontent.com/p/AF1QipMo1p7a2K8nyviTZMqX62XLLvAA33y76P5upHt1=s680-w680-h510'
     },
     {
       name: 'Berkely',
