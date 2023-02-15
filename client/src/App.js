@@ -1,6 +1,5 @@
 import './App.css'
-import axios from 'axios'
-import { BASE_URL } from './globals'
+
 import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'

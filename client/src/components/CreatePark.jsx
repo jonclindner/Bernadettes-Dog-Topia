@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+
 const CreatePark = () => {
   const initialState = {
     name: '',
@@ -16,6 +17,7 @@ const CreatePark = () => {
   }
   const handleSubmit = async (event) => {
     event.preventDefault()
+
     await axios.post('http://localhost:3001/api/parks', formState)
     setFormState(initialState)
   }
