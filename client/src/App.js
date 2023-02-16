@@ -8,6 +8,7 @@ import Create from './pages/Create'
 import Review from './pages/Review'
 import Update from './pages/Update'
 import ParkInfo from './pages/ParkInfo'
+import ParkCard from './components/ParkCard'
 
 const App = () => {
   return (
@@ -19,8 +20,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/create" element={<Create />} />
           <Route path="/review" element={<Review />} />
-          <Route path="/update" element={<Update />} />
+          {/* <Route path="/update" element={<Update />} /> */}
           <Route path="/parks/:parkId" element={<ParkInfo />} />
+          <Route path="/parks/update/:parkId" element={<Update />} />
         </Routes>
       </main>
     </div>

@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
-
-const CreatePark = () => {
+import { useParams, useNavigate } from 'react-router-dom'
+const UpdatePark = () => {
+  let navigate = useNavigate()
   const initialState = {
     name: '',
     location: '',
@@ -9,7 +10,8 @@ const CreatePark = () => {
     description: '',
     image: ''
   }
-
+  let { parkId } = useParams()
+  console.log(parkId)
   const [formState, setFormState] = useState(initialState)
 
   const handleChange = (event) => {
@@ -18,8 +20,9 @@ const CreatePark = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    await axios.post('http://localhost3001/api/parks', formState)
+    await axios.put(`http://localhost:3001/api/parks/${parkId}`, formState)
     setFormState(initialState)
+    navigate(`/`)
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -39,7 +42,6 @@ const CreatePark = () => {
       />
       <label htmlFor="material">Ground Surface Material:</label>
       <select id="material" onChange={handleChange} value={formState.material}>
-        <option value=""> </option>
         <option value="dirt">Dirt</option>
         <option value="grass">Cultivated Grass</option>
         <option value="gravel">Gravel</option>
@@ -64,4 +66,4 @@ const CreatePark = () => {
   )
 }
 
-export default CreatePark
+export default UpdatePark

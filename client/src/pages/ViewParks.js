@@ -12,7 +12,7 @@ const Viewparks = () => {
     let isCancelled = false
     const getParks = async () => {
       const response = await axios.get('http://localhost:3001/api/parks')
-      console.log(response.data.parks._id)
+      console.log(response.data)
       //   if (!isCancelled) {
       setParks(response.data.parks)
       //   }
