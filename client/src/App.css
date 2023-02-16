@@ -31,3 +31,39 @@ form {
   width: 100vw;
   height: 50vh;
 }
+.card:hover {
+  opacity: 0.69;
+}
+.card {
+  color: white; 
+  max-width: 300px;
+  max-height: 380px;
+  border-radius: 4px;
+  background-color: rgb(105, 108, 128);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.card .img-wrapper {
+  width: auto;
+  text-align: center;
+}
+.card img {
+  width: auto;
+  height: 200px;
+  display: flex; 
+  text-align: center;
+  margin: auto; 
+}
+
+.card .info-wrapper {
+  padding: 1em;
+}
+.container-grid {
+  padding: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  grid-gap: 1em;
+  justify-content: center;
+}
