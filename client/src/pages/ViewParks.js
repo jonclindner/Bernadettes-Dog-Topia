@@ -12,7 +12,7 @@ const Viewparks = () => {
     let isCancelled = false
     const getParks = async () => {
       const response = await axios.get('http://localhost:3001/api/parks')
-      console.log(response.data.parks)
+      console.log(response.data.parks._id)
       //   if (!isCancelled) {
       setParks(response.data.parks)
       //   }
@@ -26,12 +26,12 @@ const Viewparks = () => {
   return (
     <div className="container-grid">
       {parks.map((park) => (
-        // <Link to={`/games/details/${game.id}`} key={game.id}>
-        <ParkCard
-          {...park}
-          // image={park.background_image}
-        />
-        // </Link>
+        <Link to={`/parks/${park._id}`} key={park._id}>
+          <ParkCard
+            {...park}
+            // image={park.background_image}
+          />
+        </Link>
       ))}
     </div>
   )

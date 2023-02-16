@@ -7,6 +7,7 @@ import About from './pages/About'
 import Create from './pages/Create'
 import Review from './pages/Review'
 import Update from './pages/Update'
+import ParkInfo from './pages/ParkInfo'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/create" element={<Create />} />
           <Route path="/review" element={<Review />} />
           <Route path="/update" element={<Update />} />
+          <Route path="/parks/:parkId" element={<ParkInfo />} />
         </Routes>
       </main>
     </div>

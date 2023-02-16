@@ -33,3 +33,7 @@
 ### **_Screenshots_**
 
 ### **_Credits_**
+
+https://www.redbubble.com/people/DiveTheWorld/shop
+google.com/maps/contrib/103431639581862234852/photos/@39.7375225,-105.020776,14z/data=!4m3!8m2!3m1!1e1 --- Barnum Photo
+https://www.google.com/maps/contrib/115813078205138119764 -- Berkeley Photo

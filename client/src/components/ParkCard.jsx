@@ -1,6 +1,6 @@
 const ParkCard = (props) => {
   return (
-    <div className="card game-card">
+    <div className="card game-card" onClick={props.onClick}>
       <h3>{props.name}</h3>
       <p>{props.location}</p>
       <div className="img-wrapper">
