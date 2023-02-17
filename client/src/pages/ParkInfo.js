@@ -53,7 +53,10 @@ const ParkDetails = () => {
     const response = await axios.get(
       `http://localhost:3001/api/reviews/${parkId}`
     )
-    console.log(response.data.reviews)
+    console.log(...response.data.reviews)
+    if (!isCancelled) {
+      setParkReviews(response.data.reviews)
+    }
   }
   useEffect(() => {
     getParkDetails()
@@ -68,6 +71,7 @@ const ParkDetails = () => {
       isCancelled = true
     }
   }, [parkId])
+  console.log(parkReviews[0].user)
   return (
     <div className="game-content">
       <div>
@@ -85,6 +89,10 @@ const ParkDetails = () => {
           {/* <button>Leave a Review</button> */}
           <button>Update Park Information</button>
         </Link>
+      </div>
+      <div>
+        <h1>{parkReviews[0].user}</h1>
+        <div className="container-grid"></div>
       </div>
     </div>
   )
