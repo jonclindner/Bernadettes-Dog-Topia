@@ -12,12 +12,6 @@ const Header = () => {
         <NavLink to="/create" style={{ color: 'white' }}>
           Add a Park
         </NavLink>
-        <NavLink to="/Review" style={{ color: 'white' }}>
-          Leave a Review
-        </NavLink>
-        <NavLink to="/update" style={{ color: 'white' }}>
-          Update Information
-        </NavLink>
       </nav>
     </header>
   )
