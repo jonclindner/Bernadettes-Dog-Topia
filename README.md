@@ -1,12 +1,12 @@
 # Bernadette's Dog-Topia
 
-## **Date: 2/8/23**
+## **Date: 2/17/23**
 
 ### By: Jon Lindner
 
-[Instagram](https://www.instagram.com/j.c.lindner/)
+[GitHub](https://github.com/jonclindner)
 [Linkedin](https://www.linkedin.com/in/jonathan-lindner-807847183/)
-[Facebook](https://www.facebook.com/jon.lindner.5)
+[Trello](https://trello.com/b/Oc15X7CN/bernadettes-dog-topia)
 
 ---
 

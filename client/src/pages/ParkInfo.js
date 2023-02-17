@@ -61,7 +61,7 @@ const ParkDetails = () => {
       isCancelled = true
     }
   }, [parkId])
-  console.log(parkReviews[0].user)
+  console.log(parkReviews[0].ugaser)
   return (
     <div className="game-content">
       <div>
@@ -84,7 +84,6 @@ const ParkDetails = () => {
           <button>Delete Park</button>
         </Link>
       </div>
-<<<<<<< HEAD
       {parkReviews?.map((review) => (
         <div key={review._id}>
           <h1>Review By: {review.user}</h1>
@@ -93,12 +92,6 @@ const ParkDetails = () => {
           <div className="container-grid"></div>
         </div>
       ))}
-=======
-      <div>
-        <h1>{parkReviews[0].user}</h1>
-        <div className="container-grid"></div>
-      </div>
->>>>>>> 4f148eff872c89a968911c97a1913d4a7cad1cee
     </div>
   )
 }
