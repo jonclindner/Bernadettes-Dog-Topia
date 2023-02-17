@@ -1,57 +1,42 @@
-// import axios from 'axios'
-// import Viewparks from './ViewParks'
-
-// const ParkInfo = () => {
-//   useEffect(() => {
-//     // let isCancelled = false
-//     const getPark = async () => {
-//       const response = await axios.get(
-//         `http://localhost:3001/api/parks/${parkId}`
-//       )
-//       console.log(response.data)
-//       //   if (!isCancelled) {
-//       //   setParks(response.data.parks)
-//       //   }
-//     }
-//     getPark()
-//   })
-
-//   return (
-//     <div>
-//       <h1>Park Info page </h1>
-//     </div>
-//   )
-// }
-// export default ParkInfo
-
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
-import Update from './Update'
-import UpdatePark from '../components/UpdatePark'
 
 const ParkDetails = () => {
   const [parkDetails, setParkDetails] = useState({})
 
+  const [parkReviews, setParkReviews] = useState([])
+
   let { parkId } = useParams()
 
-  let isCancelled = false
+  // let isCancelled = false
+
   const getParkDetails = async () => {
     const response = await axios.get(
       `http://localhost:3001/api/parks/${parkId}`
     )
     console.log(response)
-    if (!isCancelled) {
-      setParkDetails(response.data.park)
-      console.log(response.data.park)
-    }
+    // if (!isCancelled) {
+    setParkDetails(response.data.park)
+    console.log(response.data.park)
+    // }
+  }
+  const getParkReviews = async () => {
+    const response = await axios.get(
+      `http://localhost:3001/api/reviews/${parkId}`
+    )
+    console.log(response.data.reviews)
+    // if (!isCancelled) {
+    setParkReviews(response.data.reviews)
+    // }
   }
   useEffect(() => {
     getParkDetails()
-    return () => {
-      isCancelled = true
-    }
-  }, [parkId])
+    getParkReviews()
+    // return () => {
+    //   isCancelled = true
+    // }
+  }, [])
 
   return (
     <div className="game-content">
@@ -71,6 +56,14 @@ const ParkDetails = () => {
           <button>Update Park Information</button>
         </Link>
       </div>
+      {parkReviews?.map((review) => (
+        <div key={review._id}>
+          <h1>Review By: {review.user}</h1>
+          <h2>Rating: {review.rating}/5</h2>
+          <h2>Comment: {review.comment}</h2>
+          <div className="container-grid"></div>
+        </div>
+      ))}
     </div>
   )
 }

@@ -1,18 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 const UpdatePark = () => {
   let navigate = useNavigate()
-  const initialState = {
-    name: '',
-    location: '',
-    material: '',
-    description: '',
-    image: ''
-  }
+  //   const initialState = {
+  //     name: '',
+  //     location: '',
+  //     material: '',
+  //     description: '',
+  //     image: ''
+  //   }
   let { parkId } = useParams()
   console.log(parkId)
-  const [formState, setFormState] = useState(initialState)
+  const [formState, setFormState] = useState({})
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
@@ -21,9 +21,18 @@ const UpdatePark = () => {
     event.preventDefault()
 
     await axios.put(`http://localhost:3001/api/parks/${parkId}`, formState)
-    setFormState(initialState)
+    setFormState({})
     navigate(`/`)
   }
+  useEffect(() => {
+    const getParkDetails = async () => {
+      let response = await axios.get(
+        `http://localhost:3001/api/parks/${parkId}`
+      )
+      setFormState(response.data.park)
+    }
+    getParkDetails()
+  }, [])
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name of Park:</label>

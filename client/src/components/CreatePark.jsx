@@ -18,7 +18,7 @@ const CreatePark = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    await axios.post('http://localhost3001/api/parks', formState)
+    await axios.post('http://localhost:3001/api/parks', formState)
     setFormState(initialState)
   }
   return (
@@ -39,7 +39,9 @@ const CreatePark = () => {
       />
       <label htmlFor="material">Ground Surface Material:</label>
       <select id="material" onChange={handleChange} value={formState.material}>
-        <option value=""> </option>
+        <option value="" disabled>
+          Select Material
+        </option>
         <option value="dirt">Dirt</option>
         <option value="grass">Cultivated Grass</option>
         <option value="gravel">Gravel</option>
