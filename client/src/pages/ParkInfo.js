@@ -36,6 +36,7 @@ const ParkDetails = () => {
   let { parkId } = useParams()
 
   let isCancelled = false
+
   const getParkDetails = async () => {
     const response = await axios.get(
       `http://localhost:3001/api/parks/${parkId}`
@@ -46,8 +47,20 @@ const ParkDetails = () => {
       console.log(response.data.park)
     }
   }
+  const getParkReviews = async () => {
+    const response = await axios.get(
+      `http://localhost:3001/api/reviews/${parkId}`
+    )
+  }
   useEffect(() => {
     getParkDetails()
+    return () => {
+      isCancelled = true
+    }
+  }, [parkId])
+
+  useEffect(() => {
+    getParkReviews()
     return () => {
       isCancelled = true
     }
