@@ -22,4 +22,6 @@ router.put('/reviews/:id', controllers.updateReview)
 
 router.delete('/reviews/:id', controllers.deleteReview)
 
+router.get('/reviews/:id', controllers.getReviewsByParkId)
+
 module.exports = router

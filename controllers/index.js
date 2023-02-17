@@ -78,6 +78,14 @@ const getAllReviews = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getReviewsByParkId = async (req, res) => {
+  try {
+    const reviews = await Review.find({ park_id: req.params.id })
+    return res.status(200).json({ reviews })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 const updateReview = async (req, res) => {
   try {
     const review = await Review.findByIdAndUpdate(req.params.id, req.body, {
@@ -110,5 +118,6 @@ module.exports = {
   createReview,
   getAllReviews,
   updateReview,
-  deleteReview
+  deleteReview,
+  getReviewsByParkId
 }
