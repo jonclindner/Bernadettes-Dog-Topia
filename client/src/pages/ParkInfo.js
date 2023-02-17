@@ -5,19 +5,9 @@ import axios from 'axios'
 const ParkDetails = () => {
   const [parkDetails, setParkDetails] = useState({})
 
-<<<<<<< HEAD
   const [parkReviews, setParkReviews] = useState([])
 
   let { parkId } = useParams()
-
-  // let isCancelled = false
-=======
-  const [parkReviews, setParkReviews] = useState({})
-
-  let { parkId } = useParams()
-
-  let isCancelled = false
->>>>>>> 4f148eff872c89a968911c97a1913d4a7cad1cee
 
   const getParkDetails = async () => {
     const response = await axios.get(
@@ -38,15 +28,7 @@ const ParkDetails = () => {
     setParkReviews(response.data.reviews)
     // }
   }
-  const getParkReviews = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/reviews/${parkId}`
-    )
-    console.log(...response.data.reviews)
-    if (!isCancelled) {
-      setParkReviews(response.data.reviews)
-    }
-  }
+
   useEffect(() => {
     getParkDetails()
     getParkReviews()
@@ -55,13 +37,6 @@ const ParkDetails = () => {
     // }
   }, [])
 
-  useEffect(() => {
-    getParkReviews()
-    return () => {
-      isCancelled = true
-    }
-  }, [parkId])
-  console.log(parkReviews[0].ugaser)
   return (
     <div className="game-content">
       <div>
@@ -79,7 +54,7 @@ const ParkDetails = () => {
           {/* <button>Leave a Review</button> */}
           <button>Update Park Information</button>
         </Link>
-        <Link to={`/parks/delete/${parkDetails._id}`} key={parkDetails._id}>
+        <Link to={`/parks/delete/${parkDetails._id}`}>
           {/* <button>Leave a Review</button> */}
           <button>Delete Park</button>
         </Link>

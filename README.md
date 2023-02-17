@@ -12,7 +12,7 @@
 
 ### **_Description_**
 
-### An engaging, scratch-built, full-stack application. Once deployed, this website will allow users to interact with buttons, search bars, forms, and dropdowns to create, read, update, and delete data from a back-end database. The purpose of this application is to allow users to rate and comment on existing dog parks within the Denver Metro area, as well as create new parks that are not listed, and delete or edit the information about any park that is listed.
+### Inspired by many muddy paw prints, dirt on my couch and bed, and poorly-organized and unstructured lists and reviews from online sources, Bernadette's Dog-Topia provides a solution. This scratch-built, full-stack application allows users to create, view, update, and delete information regarding their favorite dog parks within the Denver Metro area. Unlike other review platforms, this information is structured to provide useful infomation such as the ground surface material, so viewers can choose a park to visit which will keep their dogs and homes as clean as possible.
 
 ---
 
@@ -31,6 +31,11 @@
 - NodeJS
 
 ### **_Screenshots_**
+
+### **_Future Updates_**
+
+- Add front-end C.R.U.D funcitons to "review" schema
+-
 
 ### **_Credits_**
 
