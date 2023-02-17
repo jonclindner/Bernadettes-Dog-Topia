@@ -31,9 +31,6 @@ const main = async () => {
   ]
 
   await Review.insertMany(reviews)
-  console.log('Created reviews for parks')
-  console.log(barnum)
-  console.log(barnum[0]._id)
 }
 const run = async () => {
   await main()

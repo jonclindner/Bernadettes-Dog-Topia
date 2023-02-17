@@ -27,10 +27,7 @@ const Viewparks = () => {
     <div className="container-grid">
       {parks.map((park) => (
         <Link to={`/parks/${park._id}`} key={park._id}>
-          <ParkCard
-            {...park}
-            // image={park.background_image}
-          />
+          <ParkCard {...park} />
         </Link>
       ))}
     </div>

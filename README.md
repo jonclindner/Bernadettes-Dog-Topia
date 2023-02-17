@@ -18,7 +18,7 @@
 
 ### **_Getting Started_**
 
-### To begin the application, I will create a new React app, complete all installs, connect to Mongoose, create my schema for the data, add data about parks in the area and decide on approximate styling for the page. I will then install Nodemon and set up Express folders, and create a way for the user to add, change, and delete data. Once the site is functional, styling will be the main priortity.
+### Upon navigating to the home page, the user is greeted with a list of seeded parks and a navigation bar at the top of the screen
 
 ---
 
@@ -40,7 +40,8 @@
 
 ### **_Credits_**
 
-All General Assembly SEI Lessons through week 5
+All General Assembly SEI class material through week five
+
 https://www.redbubble.com/people/DiveTheWorld/shop
 google.com/maps/contrib/103431639581862234852/photos/@39.7375225,-105.020776,14z/data=!4m3!8m2!3m1!1e1 --- Barnum Photo
 https://www.google.com/maps/contrib/115813078205138119764 -- Berkeley Photo

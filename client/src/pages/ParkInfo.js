@@ -13,28 +13,20 @@ const ParkDetails = () => {
     const response = await axios.get(
       `http://localhost:3001/api/parks/${parkId}`
     )
-    console.log(response)
-    // if (!isCancelled) {
+
     setParkDetails(response.data.park)
-    console.log(response.data.park)
-    // }
   }
   const getParkReviews = async () => {
     const response = await axios.get(
       `http://localhost:3001/api/reviews/${parkId}`
     )
-    console.log(response.data.reviews)
-    // if (!isCancelled) {
+
     setParkReviews(response.data.reviews)
-    // }
   }
 
   useEffect(() => {
     getParkDetails()
     getParkReviews()
-    // return () => {
-    //   isCancelled = true
-    // }
   }, [])
 
   return (
@@ -49,13 +41,11 @@ const ParkDetails = () => {
           src={parkDetails.image}
           alt="Park"
         />
-        {/* <UpdatePark /> */}
+
         <Link to={`/parks/update/${parkDetails._id}`} key={parkDetails._id}>
-          {/* <button>Leave a Review</button> */}
           <button>Update Park Information</button>
         </Link>
         <Link to={`/parks/delete/${parkDetails._id}`}>
-          {/* <button>Leave a Review</button> */}
           <button>Delete Park</button>
         </Link>
       </div>
