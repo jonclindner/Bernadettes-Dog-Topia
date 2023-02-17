@@ -33,6 +33,8 @@ import UpdatePark from '../components/UpdatePark'
 const ParkDetails = () => {
   const [parkDetails, setParkDetails] = useState({})
 
+  const [parkReviews, setParkReviews] = useState({})
+
   let { parkId } = useParams()
 
   let isCancelled = false
@@ -51,6 +53,7 @@ const ParkDetails = () => {
     const response = await axios.get(
       `http://localhost:3001/api/reviews/${parkId}`
     )
+    console.log(response.data.reviews)
   }
   useEffect(() => {
     getParkDetails()
@@ -65,7 +68,6 @@ const ParkDetails = () => {
       isCancelled = true
     }
   }, [parkId])
-
   return (
     <div className="game-content">
       <div>
