@@ -1,5 +1,5 @@
 import DeletePark from '../components/DeletePark'
-const Update = () => {
+const Delete = () => {
   return (
     <div>
       <h1>Delete This Park</h1>

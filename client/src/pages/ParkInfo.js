@@ -55,6 +55,10 @@ const ParkDetails = () => {
           {/* <button>Leave a Review</button> */}
           <button>Update Park Information</button>
         </Link>
+        <Link to={`/parks/delete/${parkDetails._id}`} key={parkDetails._id}>
+          {/* <button>Leave a Review</button> */}
+          <button>Delete Park</button>
+        </Link>
       </div>
       {parkReviews?.map((review) => (
         <div key={review._id}>

@@ -9,6 +9,7 @@ import Review from './pages/Review'
 import Update from './pages/Update'
 import ParkInfo from './pages/ParkInfo'
 import ParkCard from './components/ParkCard'
+import Delete from './pages/Delete'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           {/* <Route path="/update" element={<Update />} /> */}
           <Route path="/parks/:parkId" element={<ParkInfo />} />
           <Route path="/parks/update/:parkId" element={<Update />} />
+          <Route path="/parks/delete/:parkId" element={<Delete />} />
         </Routes>
       </main>
     </div>
